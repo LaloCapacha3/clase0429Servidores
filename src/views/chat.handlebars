@@ -1,0 +1,15 @@
+<h1>Chat Room</h1>
+
+<div id="chat-box" style="border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; margin-bottom: 15px;">
+    {{#each messages}}
+        <div>
+            <strong>{{this.userName}}:</strong> {{this.text}} <small style="color: gray;">({{this.timestamp}})</small>
+        </div>
+    {{/each}}
+</div>
+
+<form id="chat-form" method="POST" action="/chat/send">
+    <input type="text" name="userName" placeholder="Tu nombre" required>
+    <input type="text" name="text" placeholder="Escribe un mensaje..." required>
+    <button type="submit">Enviar</button>
+</form>
